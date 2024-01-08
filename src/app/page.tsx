@@ -15,7 +15,7 @@ export default function Home() {
       body: JSON.stringify({
         to: "5514998336427",
         body: content,
-        name: "Matheus Moreira"
+        name: "Steve Moreira"
       }),
       headers: {
         "Content-Type": "application/json",
