@@ -4,28 +4,23 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 
 export default function Home() {
-  async function onSubmit(formData: FormData) {
+  async function onSubmit(formData: FormData): Promise<void> {
     'use server'
     
     const content = formData.get("content")
     
     await fetch(
-      `https://ca41-2804-431-cfe6-2ab5-a958-5a7f-10cf-4924.ngrok-free.app/v1/actives/messages`, {
+      `https://9285-2804-431-cfe6-f125-d6f-efdb-63-ea2.ngrok-free.app/v1/actives/messages`, {
       method: "POST",
       body: JSON.stringify({
         to: "5514998336427",
         body: content,
-        name: "Steve Moreira"
+        name: "Raquel Moreira"
       }),
       headers: {
         "Content-Type": "application/json",
-      }, 
-      next: {
-        revalidate: 10
-      }
+      },
     })
-
-    console.log('teste')
   }
   return (
     <div className="min-h-screen flex flex-col">
